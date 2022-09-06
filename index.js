@@ -11,7 +11,11 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://isharaliyanage.github.io"],
+    origin: [
+      "http://localhost:3000",
+      "https://isharaliyanage.github.io",
+      "https://client-delta-three.vercel.app",
+    ],
   })
 );
 
