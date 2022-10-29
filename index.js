@@ -9,15 +9,7 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const cors = require("cors");
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://isharaliyanage.github.io",
-      "https://client-delta-three.vercel.app",
-    ],
-  })
-);
+app.use(cors());
 
 dotenv.config();
 
