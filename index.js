@@ -22,6 +22,7 @@ router.use(function (req, res, next) {
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   res.header("Access-Control-Allow-Credentials", "true");
+  res.header(" Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE");
 
   next();
 });
