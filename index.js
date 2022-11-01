@@ -8,11 +8,21 @@ const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const cors = require("cors");
+const router = express.Router();
+app.use(express.json());
 
 app.use(cors());
 
 dotenv.config();
 
+router.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("db  success"))
@@ -20,7 +30,6 @@ mongoose
     console.log(err);
   });
 
-app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
