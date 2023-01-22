@@ -5,5 +5,5 @@ netlify.toml
 
 [[redirects]]
   from = "/"
-  to = "/earworms.json"
+  to = "/index.js"
   status = 302
