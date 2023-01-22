@@ -1,19 +1,4 @@
 [build]
-  base = "my-app"
-  command = "npm start
-  environment = { MONGO_URL = "mongodb+srv://ishara1:ishara@cluster0.pdoeo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority" }
-
-[[redirects]]
-  from = "/old-page"
-  to = "/new-page"
-  status = 301
-
-[[rewrites]]
-  from = "/api/*"
-  to = "/.netlify/functions/api/:splat"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
+  command = "npm start"
+  functions = "functions"
+  publish = "dist"
