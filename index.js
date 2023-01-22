@@ -8,24 +8,24 @@ const productRoute = require("./routes/product");
 const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const cors = require("cors");
-// const router = express.Router();
+const router = express.Router();
 app.use(express.json());
 
-// app.use(cors());
+app.use(cors());
 
 dotenv.config();
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(" Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE");
+// router.use(function (req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
+//   res.header("Access-Control-Allow-Credentials", "true");
+//   res.header(" Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE");
 
-  next();
-});
+//   next();
+// });
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("db  success"))
